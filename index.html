@@ -12,13 +12,13 @@
     <link rel="icon" type="image/x-icon" href="/ProjectPenjualanDaging/img/logo.png" />
 
    <style>
+ <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
   body {
-    background: #060b13; /* Warna dasar pekat sesuai landing page */
+    background: #060b13;
     color: white;
     font-family: 'Poppins', sans-serif;
-    /* Pola Grid Halus */
     background-image: 
       linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
@@ -26,19 +26,6 @@
     min-height: 100vh;
   }
 
-  /* Efek Glow di Background */
-  body::before {
-    content: '';
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(0, 195, 255, 0.1) 0%, rgba(0, 195, 255, 0) 70%);
-    top: -100px;
-    right: -100px;
-    z-index: -1;
-  }
-
-  /* NAVBAR: Glassmorphism */
   .navbar {
     background: rgba(8, 17, 32, 0.8) !important;
     backdrop-filter: blur(15px);
@@ -53,7 +40,35 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* CARDS: Glass Style */
+  /* --- PERBAIKAN SEARCH BAR --- */
+  #searchInput {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff !important; /* Teks saat mengetik */
+    border-radius: 50px 0 0 50px;
+    padding-left: 20px;
+  }
+
+  #searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important; /* Teks 'Cari Produk...' */
+    opacity: 1;
+  }
+
+  #searchInput:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: #00c3ff;
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+    outline: none;
+  }
+
+  .btn-light {
+    border-radius: 0 50px 50px 0;
+    background: white;
+    color: #060b13;
+    border: none;
+  }
+  /* --- AKHIR PERBAIKAN SEARCH BAR --- */
+
   .card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -72,87 +87,28 @@
   .card img {
     height: 230px;
     object-fit: cover;
-    filter: brightness(0.9);
   }
 
-  .card-title {
-    color: #00c3ff;
-    font-weight: 700;
-  }
+  .card-title { color: #00c3ff; font-weight: 700; }
 
   .card-text.text-danger {
-    color: #ff00aa !important; /* Harga menggunakan warna pink magenta */
+    color: #ff00aa !important;
     font-size: 1.2rem;
     font-weight: 800;
   }
 
-  .badge.bg-secondary {
-    background: rgba(0, 195, 255, 0.2) !important;
-    color: #00c3ff;
-    border: 1px solid #00c3ff;
-  }
-
-  /* BUTTON: Gradient Tech */
   .btn-primary {
     background: linear-gradient(to right, #00c3ff, #ff00aa);
     border: none;
     border-radius: 50px;
-    padding: 10px;
     font-weight: 600;
-    transition: 0.3s;
   }
 
-  .btn-primary:hover {
-    box-shadow: 0 5px 15px rgba(255, 0, 170, 0.4);
-    transform: scale(1.02);
-  }
-
-  /* MODAL: Dark Theme */
   .modal-content {
     background: #081120;
     border: 1px solid #00c3ff;
     color: white;
     border-radius: 30px;
-  }
-
-  .modal-header { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-  .modal-footer { border-top: 1px solid rgba(255, 255, 255, 0.1); }
-
-  .form-control {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    border-radius: 12px;
-  }
-
-  .form-control:focus {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border-color: #00c3ff;
-    box-shadow: none;
-  }
-
-  /* SEARCH INPUT */
-  #searchInput {
-    border-radius: 50px 0 0 50px;
-    padding-left: 20px;
-  }
-
-  .btn-light {
-    border-radius: 0 50px 50px 0;
-    background: white;
-    color: #060b13;
-    border: none;
-  }
-
-  #total-harga {
-    color: #00c3ff !important;
-    font-weight: 800;
-  }
-
-  /* Animasi naik untuk card */
-  .effect-totop {
-    transition: 0.4s;
   }
 </style>
   </head>
@@ -161,27 +117,6 @@
     // DATA PRODUK
     const produk = ['Daging Ayam', 'Daging Sapi', 'Daging Kambing', 'Telur Ayam ', 'Daging Kuda', 'Susu Kambing', 'Daging Slice'];
 
-
-    /* Warna teks saat mengetik di kolom cari */
-  #searchInput {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff !important; /* Warna teks putih saat mengetik */
-  }
-
-  /* Warna teks 'Cari Produk...' (Placeholder) agar lebih terang */
-  #searchInput::placeholder {
-    color: rgba(255, 255, 255, 0.7) !important;
-    opacity: 1; /* Supaya warna tidak transparan di beberapa browser */
-  }
-
-  /* Menghilangkan outline biru bawaan browser saat diklik */
-  #searchInput:focus {
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
-    border-color: #00c3ff;
-    color: #ffffff;
-  }
     // FUNGSI CARI PRODUK
     function cariProduk() {
       const input = document.getElementById('searchInput').value.toLowerCase();
