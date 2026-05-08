@@ -11,142 +11,148 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <link rel="icon" type="image/x-icon" href="/ProjectPenjualanDaging/img/logo.png" />
 
-    <style>
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+   <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
   body {
-    background-color: #fcfdfc;
-    /* Pola background halus agar tidak monoton */
-    background-image: radial-gradient(#e0eadd 0.8px, transparent 0.8px);
-    background-size: 24px 24px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: #2d3436;
+    background: #060b13; /* Warna dasar pekat sesuai landing page */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    /* Pola Grid Halus */
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    min-height: 100vh;
   }
 
-  /* NAVBAR: Glassmorphism Effect */
+  /* Efek Glow di Background */
+  body::before {
+    content: '';
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 195, 255, 0.1) 0%, rgba(0, 195, 255, 0) 70%);
+    top: -100px;
+    right: -100px;
+    z-index: -1;
+  }
+
+  /* NAVBAR: Glassmorphism */
   .navbar {
+    background: rgba(8, 17, 32, 0.8) !important;
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    background: rgba(27, 67, 50, 0.9) !important;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .navbar-brand span {
-    letter-spacing: 1px;
-    font-weight: 700;
+    font-weight: 800;
+    background: linear-gradient(to right, #00c3ff, #ff00aa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  /* SEARCH BAR: Rounded & Elegant */
-  #searchInput {
-    border-radius: 50px 0 0 50px;
-    border: none;
-    padding-left: 20px;
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  .btn-light {
-    border-radius: 0 50px 50px 0;
-    border: none;
-    background: #fff;
-    color: #2d6a4f;
-  }
-
-  /* CARDS: Floating Effect */
-  .effect-totop {
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-
-  .effect-totop:hover {
-    transform: translateY(-10px);
-  }
-
+  /* CARDS: Glass Style */
   .card {
-    border: none;
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
     overflow: hidden;
-    background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.4s;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    border-color: #00c3ff;
+    box-shadow: 0 10px 30px rgba(0, 195, 255, 0.2);
   }
 
   .card img {
-    height: 220px;
+    height: 230px;
     object-fit: cover;
-    transition: transform 0.6s;
-  }
-
-  .card:hover img {
-    transform: scale(1.1);
-  }
-
-  .card-body {
-    padding: 1.5rem;
+    filter: brightness(0.9);
   }
 
   .card-title {
+    color: #00c3ff;
     font-weight: 700;
-    font-size: 1.1rem;
-    color: #1b4332;
-    margin-bottom: 10px;
   }
 
-  /* HARGA & BADGE */
-  .text-danger {
-    color: #2d6a4f !important; /* Warna hijau gelap agar lebih premium */
-    font-size: 1.25rem !important;
+  .card-text.text-danger {
+    color: #ff00aa !important; /* Harga menggunakan warna pink magenta */
+    font-size: 1.2rem;
+    font-weight: 800;
   }
 
   .badge.bg-secondary {
-    background-color: #d8f3dc !important;
-    color: #2d6a4f;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 8px;
+    background: rgba(0, 195, 255, 0.2) !important;
+    color: #00c3ff;
+    border: 1px solid #00c3ff;
   }
 
-  /* BUTTON: Gradient Premium */
+  /* BUTTON: Gradient Tech */
   .btn-primary {
-    background: linear-gradient(135deg, #40916c, #2d6a4f);
+    background: linear-gradient(to right, #00c3ff, #ff00aa);
     border: none;
-    border-radius: 12px;
+    border-radius: 50px;
     padding: 10px;
     font-weight: 600;
     transition: 0.3s;
   }
 
   .btn-primary:hover {
-    background: linear-gradient(135deg, #52b788, #40916c);
-    box-shadow: 0 8px 15px rgba(45, 106, 79, 0.2);
+    box-shadow: 0 5px 15px rgba(255, 0, 170, 0.4);
+    transform: scale(1.02);
   }
 
-  /* CART BADGE */
-  #cart-count {
-    background-color: #ffb300 !important;
-    font-weight: 700;
-  }
-
-  /* MODAL: Rounded */
+  /* MODAL: Dark Theme */
   .modal-content {
-    border-radius: 25px;
+    background: #081120;
+    border: 1px solid #00c3ff;
+    color: white;
+    border-radius: 30px;
+  }
+
+  .modal-header { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+  .modal-footer { border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
+  .form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 12px;
+  }
+
+  .form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: #00c3ff;
+    box-shadow: none;
+  }
+
+  /* SEARCH INPUT */
+  #searchInput {
+    border-radius: 50px 0 0 50px;
+    padding-left: 20px;
+  }
+
+  .btn-light {
+    border-radius: 0 50px 50px 0;
+    background: white;
+    color: #060b13;
     border: none;
-    overflow: hidden;
   }
 
-  .modal-header {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #eee;
+  #total-harga {
+    color: #00c3ff !important;
+    font-weight: 800;
   }
 
-  /* CUSTOM SCROLLBAR */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #b7e4c7;
-    border-radius: 10px;
+  /* Animasi naik untuk card */
+  .effect-totop {
+    transition: 0.4s;
   }
 </style>
   </head>
