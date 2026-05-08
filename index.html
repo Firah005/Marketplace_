@@ -11,25 +11,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <link rel="icon" type="image/x-icon" href="/ProjectPenjualanDaging/img/logo.png" />
 
-   <style>
- <style>
+<style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
   body {
-    background: #060b13;
+    /* Gradasi Elegan: Perpaduan warna gelap dengan bias biru dan pink di pojok */
+    background: radial-gradient(circle at 0% 0%, rgba(0, 195, 255, 0.15) 0%, transparent 35%),
+                radial-gradient(circle at 100% 100%, rgba(255, 0, 170, 0.1) 0%, transparent 35%),
+                #060b13; 
     color: white;
     font-family: 'Poppins', sans-serif;
+    background-attachment: fixed; /* Agar background tetap saat di-scroll */
+    min-height: 100vh;
+    margin: 0;
+    /* Pola Grid halus untuk kesan tech */
     background-image: 
+      radial-gradient(circle at 0% 0%, rgba(0, 195, 255, 0.15) 0%, transparent 35%),
+      radial-gradient(circle at 100% 100%, rgba(255, 0, 170, 0.1) 0%, transparent 35%),
       linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 50px 50px;
-    min-height: 100vh;
+    background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px;
   }
 
+  /* NAVBAR: Transparan Mewah */
   .navbar {
-    background: rgba(8, 17, 32, 0.8) !important;
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(8, 17, 32, 0.7) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .navbar-brand span {
@@ -40,75 +49,102 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* --- PERBAIKAN SEARCH BAR --- */
+  /* SEARCH BAR: Lebih Terang & Jelas */
   #searchInput {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.12) !important;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff !important; /* Teks saat mengetik */
+    color: #ffffff !important;
     border-radius: 50px 0 0 50px;
     padding-left: 20px;
   }
 
   #searchInput::placeholder {
-    color: rgba(255, 255, 255, 0.7) !important; /* Teks 'Cari Produk...' */
-    opacity: 1;
-  }
-
-  #searchInput:focus {
-    background: rgba(255, 255, 255, 0.15) !important;
-    border-color: #00c3ff;
-    box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
-    outline: none;
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.9rem;
   }
 
   .btn-light {
     border-radius: 0 50px 50px 0;
-    background: white;
-    color: #060b13;
+    background: #ffffff;
     border: none;
+    padding: 0 20px;
   }
-  /* --- AKHIR PERBAIKAN SEARCH BAR --- */
 
+  /* CARD PRODUK: Efek Kaca (Glassmorphism) */
   .card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
-    border-radius: 25px;
+    border-radius: 24px;
     overflow: hidden;
-    transition: 0.4s;
+    transition: all 0.4s ease;
   }
 
   .card:hover {
-    transform: translateY(-10px);
-    border-color: #00c3ff;
-    box-shadow: 0 10px 30px rgba(0, 195, 255, 0.2);
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(0, 195, 255, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(0, 195, 255, 0.1);
   }
 
   .card img {
     height: 230px;
     object-fit: cover;
+    transition: 0.5s;
   }
 
-  .card-title { color: #00c3ff; font-weight: 700; }
+  .card:hover img {
+    transform: scale(1.08);
+  }
 
+  .card-title {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* HARGA: Warna Pink Magenta Neon */
   .card-text.text-danger {
     color: #ff00aa !important;
-    font-size: 1.2rem;
-    font-weight: 800;
+    font-size: 1.3rem !important;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 0, 170, 0.3);
   }
 
+  .badge.bg-secondary {
+    background: rgba(0, 195, 255, 0.15) !important;
+    color: #00c3ff;
+    border: 1px solid rgba(0, 195, 255, 0.3);
+    padding: 6px 12px;
+  }
+
+  /* TOMBOL: Gradasi Signature */
   .btn-primary {
-    background: linear-gradient(to right, #00c3ff, #ff00aa);
+    background: linear-gradient(135deg, #00c3ff, #ff00aa);
     border: none;
-    border-radius: 50px;
+    border-radius: 14px;
     font-weight: 600;
+    padding: 12px;
+    transition: 0.3s;
   }
 
-  .modal-content {
-    background: #081120;
-    border: 1px solid #00c3ff;
+  .btn-primary:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(255, 0, 170, 0.3);
+  }
+
+  /* Keranjang Icon */
+  .btn-light.position-relative {
+    background: rgba(255, 255, 255, 0.1);
     color: white;
-    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+  }
+
+  #cart-count {
+    background: #ff00aa !important;
+    color: white !important;
   }
 </style>
   </head>
