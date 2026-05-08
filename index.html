@@ -161,6 +161,27 @@
     // DATA PRODUK
     const produk = ['Daging Ayam', 'Daging Sapi', 'Daging Kambing', 'Telur Ayam ', 'Daging Kuda', 'Susu Kambing', 'Daging Slice'];
 
+
+    /* Warna teks saat mengetik di kolom cari */
+  #searchInput {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff !important; /* Warna teks putih saat mengetik */
+  }
+
+  /* Warna teks 'Cari Produk...' (Placeholder) agar lebih terang */
+  #searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+    opacity: 1; /* Supaya warna tidak transparan di beberapa browser */
+  }
+
+  /* Menghilangkan outline biru bawaan browser saat diklik */
+  #searchInput:focus {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+    border-color: #00c3ff;
+    color: #ffffff;
+  }
     // FUNGSI CARI PRODUK
     function cariProduk() {
       const input = document.getElementById('searchInput').value.toLowerCase();
