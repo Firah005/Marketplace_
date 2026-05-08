@@ -15,30 +15,23 @@
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
   body {
-    /* Gradasi Elegan: Perpaduan warna gelap dengan bias biru dan pink di pojok */
-    background: radial-gradient(circle at 0% 0%, rgba(0, 195, 255, 0.15) 0%, transparent 35%),
-                radial-gradient(circle at 100% 100%, rgba(255, 0, 170, 0.1) 0%, transparent 35%),
-                #060b13; 
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    background-attachment: fixed;
     color: white;
     font-family: 'Poppins', sans-serif;
-    background-attachment: fixed; /* Agar background tetap saat di-scroll */
     min-height: 100vh;
     margin: 0;
-    /* Pola Grid halus untuk kesan tech */
     background-image: 
-      radial-gradient(circle at 0% 0%, rgba(0, 195, 255, 0.15) 0%, transparent 35%),
-      radial-gradient(circle at 100% 100%, rgba(255, 0, 170, 0.1) 0%, transparent 35%),
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px;
+      linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 
-  /* NAVBAR: Transparan Mewah */
+  /* NAVBAR */
   .navbar {
-    background: rgba(8, 17, 32, 0.7) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(30, 41, 59, 0.7) !important;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .navbar-brand span {
@@ -49,102 +42,196 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* SEARCH BAR: Lebih Terang & Jelas */
+  /* SEARCH BAR */
   #searchInput {
-    background: rgba(255, 255, 255, 0.12) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #ffffff !important;
     border-radius: 50px 0 0 50px;
     padding-left: 20px;
   }
 
   #searchInput::placeholder {
-    color: rgba(255, 255, 255, 0.75) !important;
-    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8) !important;
   }
 
-  .btn-light {
-    border-radius: 0 50px 50px 0;
-    background: #ffffff;
-    border: none;
-    padding: 0 20px;
-  }
-
-  /* CARD PRODUK: Efek Kaca (Glassmorphism) */
+  /* CARD PRODUK */
   .card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border-radius: 24px;
+    border-radius: 20px;
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease-in-out;
   }
 
   .card:hover {
-    transform: translateY(-12px);
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(0, 195, 255, 0.5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
-                0 0 20px rgba(0, 195, 255, 0.1);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 195, 255, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   }
 
-  .card img {
-    height: 230px;
-    object-fit: cover;
-    transition: 0.5s;
-  }
+  .card-title { color: #ffffff; font-weight: 600; }
+  .card-text.text-danger { color: #ff00aa !important; font-weight: 700; }
 
-  .card:hover img {
-    transform: scale(1.08);
-  }
-
-  .card-title {
-    color: #ffffff;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-
-  /* HARGA: Warna Pink Magenta Neon */
-  .card-text.text-danger {
-    color: #ff00aa !important;
-    font-size: 1.3rem !important;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(255, 0, 170, 0.3);
-  }
-
-  .badge.bg-secondary {
-    background: rgba(0, 195, 255, 0.15) !important;
-    color: #00c3ff;
-    border: 1px solid rgba(0, 195, 255, 0.3);
-    padding: 6px 12px;
-  }
-
-  /* TOMBOL: Gradasi Signature */
+  /* TOMBOL PRODUK */
   .btn-primary {
     background: linear-gradient(135deg, #00c3ff, #ff00aa);
     border: none;
-    border-radius: 14px;
+    border-radius: 12px;
     font-weight: 600;
-    padding: 12px;
+  }
+
+  /* 1. Modal Content (Glass Effect) */
+  .modal-content {
+    background: rgba(30, 41, 59, 0.5); /* Navy transparan */
+    backdrop-filter: blur(20px); /* Efek kaca */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 195, 255, 0.2); /* Border biru tipis */
+    border-radius: 30px; /* Lebih membulat */
+    color: white;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); /* Bayangan dalam */
+    overflow: hidden;
+  }
+
+  /* 2. Modal Header */
+  .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .modal-title i {
+    color: #00c3ff; /* Ikon keranjang warna biru */
+  }
+
+  /* Tombol Close */
+  .modal-header .btn-close {
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  /* 3. Modal Body */
+  .modal-body {
+    padding: 30px;
+  }
+
+  /* Teks Keranjang Kosong */
+  #list-keranjang {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  #list-keranjang p.text-muted {
+    color: rgba(255, 255, 255, 0.6) !important; /* Agar lebih terlihat */
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+
+  /* Divider Hhorizontal */
+  .modal-body hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 25px 0;
+  }
+
+  /* Judul Data Pembeli */
+  .modal-body h5 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #00c3ff, #ff00aa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Judul bergradasi */
+  }
+
+  /* Form Inputs (Custom Soft UI) */
+  .modal-body .form-control {
+    background: rgba(255, 255, 255, 0.05); /* Sedikit transparan */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin-bottom: 15px !important;
     transition: 0.3s;
   }
 
-  .btn-primary:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(255, 0, 170, 0.3);
+  .modal-body .form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #00c3ff;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
   }
 
-  /* Keranjang Icon */
+  .modal-body .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* 4. Modal Footer */
+  .modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Teks Total */
+  .modal-footer h5 {
+    font-weight: 500;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  #total-harga {
+    color: #00c3ff !important; /* Harga total warna biru */
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin-left: 10px;
+  }
+
+  /* Tombol Checkout WA (Gradasi & Icon) */
+  .modal-footer .btn-success {
+    background: linear-gradient(135deg, #00c3ff, #ff00aa) !important;
+    border: none;
+    border-radius: 50px; /* Lebih membulat */
+    padding: 12px 30px;
+    font-weight: 700;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .modal-footer .btn-success:hover {
+    box-shadow: 0 8px 25px rgba(255, 0, 170, 0.4);
+    transform: scale(1.03);
+  }
+
+
+  /* Tombol Keranjang Navbar */
   .btn-light.position-relative {
     background: rgba(255, 255, 255, 0.1);
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: none;
     border-radius: 12px;
   }
 
   #cart-count {
     background: #ff00aa !important;
-    color: white !important;
+    border: 2px solid #1e293b;
   }
 </style>
   </head>
