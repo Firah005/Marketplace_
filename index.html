@@ -11,229 +11,234 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <link rel="icon" type="image/x-icon" href="/ProjectPenjualanDaging/img/logo.png" />
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-  body {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-    background-attachment: fixed;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
-    margin: 0;
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
+      body {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        background-attachment: fixed;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
 
-  /* NAVBAR */
-  .navbar {
-    background: rgba(30, 41, 59, 0.7) !important;
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
+      /* NAVBAR */
+      .navbar {
+        background: rgba(30, 41, 59, 0.7) !important;
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
 
-  .navbar-brand span {
-    font-weight: 800;
-    background: linear-gradient(to right, #00c3ff, #ff00aa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+      .navbar-brand span {
+        font-weight: 800;
+        background: linear-gradient(to right, #00c3ff, #ff00aa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-  /* SEARCH BAR */
-  #searchInput {
-    background: rgba(255, 255, 255, 0.15) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ffffff !important;
-    border-radius: 50px 0 0 50px;
-    padding-left: 20px;
-  }
+      /* SEARCH BAR */
+      #searchInput {
+        background: rgba(255, 255, 255, 0.15) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #ffffff !important;
+        border-radius: 50px 0 0 50px;
+        padding-left: 20px;
+      }
 
-  #searchInput::placeholder {
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
+      #searchInput::placeholder {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
 
-  /* CARD PRODUK */
-  .card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-  }
+      /* CARD PRODUK */
+      .card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+      }
 
-  .card:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(0, 195, 255, 0.4);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  }
+      .card:hover {
+        transform: translateY(-8px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(0, 195, 255, 0.4);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      }
 
-  .card-title { color: #ffffff; font-weight: 600; }
-  .card-text.text-danger { color: #ff00aa !important; font-weight: 700; }
+      .card-title {
+        color: #ffffff;
+        font-weight: 600;
+      }
+      .card-text.text-danger {
+        color: #ff00aa !important;
+        font-weight: 700;
+      }
 
-  /* TOMBOL PRODUK */
-  .btn-primary {
-    background: linear-gradient(135deg, #00c3ff, #ff00aa);
-    border: none;
-    border-radius: 12px;
-    font-weight: 600;
-  }
+      /* TOMBOL PRODUK */
+      .btn-primary {
+        background: linear-gradient(135deg, #00c3ff, #ff00aa);
+        border: none;
+        border-radius: 12px;
+        font-weight: 600;
+      }
 
-  /* 1. Modal Content (Glass Effect) */
-  .modal-content {
-    background: rgba(30, 41, 59, 0.5); /* Navy transparan */
-    backdrop-filter: blur(20px); /* Efek kaca */
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 195, 255, 0.2); /* Border biru tipis */
-    border-radius: 30px; /* Lebih membulat */
-    color: white;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); /* Bayangan dalam */
-    overflow: hidden;
-  }
+      /* 1. Modal Content (Glass Effect) */
+      .modal-content {
+        background: rgba(30, 41, 59, 0.5); /* Navy transparan */
+        backdrop-filter: blur(20px); /* Efek kaca */
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(0, 195, 255, 0.2); /* Border biru tipis */
+        border-radius: 30px; /* Lebih membulat */
+        color: white;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); /* Bayangan dalam */
+        overflow: hidden;
+      }
 
-  /* 2. Modal Header */
-  .modal-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px 30px;
-    background: rgba(255, 255, 255, 0.03);
-  }
+      /* 2. Modal Header */
+      .modal-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 30px;
+        background: rgba(255, 255, 255, 0.03);
+      }
 
-  .modal-title {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+      .modal-title {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
 
-  .modal-title i {
-    color: #00c3ff; /* Ikon keranjang warna biru */
-  }
+      .modal-title i {
+        color: #00c3ff; /* Ikon keranjang warna biru */
+      }
 
-  /* Tombol Close */
-  .modal-header .btn-close {
-    background-color: white;
-    opacity: 0.8;
-    border-radius: 50%;
-    padding: 10px;
-  }
+      /* Tombol Close */
+      .modal-header .btn-close {
+        background-color: white;
+        opacity: 0.8;
+        border-radius: 50%;
+        padding: 10px;
+      }
 
-  /* 3. Modal Body */
-  .modal-body {
-    padding: 30px;
-  }
+      /* 3. Modal Body */
+      .modal-body {
+        padding: 30px;
+      }
 
-  /* Teks Keranjang Kosong */
-  #list-keranjang {
-    text-align: center;
-    margin-bottom: 25px;
-  }
+      /* Teks Keranjang Kosong */
+      #list-keranjang {
+        text-align: center;
+        margin-bottom: 25px;
+      }
 
-  #list-keranjang p.text-muted {
-    color: rgba(255, 255, 255, 0.6) !important; /* Agar lebih terlihat */
-    font-size: 1.1rem;
-    font-style: italic;
-  }
+      #list-keranjang p.text-muted {
+        color: rgba(255, 255, 255, 0.6) !important; /* Agar lebih terlihat */
+        font-size: 1.1rem;
+        font-style: italic;
+      }
 
-  /* Divider Hhorizontal */
-  .modal-body hr {
-    border-color: rgba(255, 255, 255, 0.1);
-    margin: 25px 0;
-  }
+      /* Divider Hhorizontal */
+      .modal-body hr {
+        border-color: rgba(255, 255, 255, 0.1);
+        margin: 25px 0;
+      }
 
-  /* Judul Data Pembeli */
-  .modal-body h5 {
-    font-weight: 700;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #00c3ff, #ff00aa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent; /* Judul bergradasi */
-  }
+      /* Judul Data Pembeli */
+      .modal-body h5 {
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #00c3ff, #ff00aa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent; /* Judul bergradasi */
+      }
 
-  /* Form Inputs (Custom Soft UI) */
-  .modal-body .form-control {
-    background: rgba(255, 255, 255, 0.05); /* Sedikit transparan */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    border-radius: 12px;
-    padding: 12px 15px;
-    margin-bottom: 15px !important;
-    transition: 0.3s;
-  }
+      /* Form Inputs (Custom Soft UI) */
+      .modal-body .form-control {
+        background: rgba(255, 255, 255, 0.05); /* Sedikit transparan */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+        border-radius: 12px;
+        padding: 12px 15px;
+        margin-bottom: 15px !important;
+        transition: 0.3s;
+      }
 
-  .modal-body .form-control:focus {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #00c3ff;
-    color: white;
-    box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
-  }
+      .modal-body .form-control:focus {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #00c3ff;
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+      }
 
-  .modal-body .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-  }
+      .modal-body .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
 
-  /* 4. Modal Footer */
-  .modal-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px 30px;
-    background: rgba(255, 255, 255, 0.03);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+      /* 4. Modal Footer */
+      .modal-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 30px;
+        background: rgba(255, 255, 255, 0.03);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-  /* Teks Total */
-  .modal-footer h5 {
-    font-weight: 500;
-    margin: 0;
-    color: rgba(255, 255, 255, 0.8);
-  }
+      /* Teks Total */
+      .modal-footer h5 {
+        font-weight: 500;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+      }
 
-  #total-harga {
-    color: #00c3ff !important; /* Harga total warna biru */
-    font-weight: 800;
-    font-size: 1.6rem;
-    margin-left: 10px;
-  }
+      #total-harga {
+        color: #00c3ff !important; /* Harga total warna biru */
+        font-weight: 800;
+        font-size: 1.6rem;
+        margin-left: 10px;
+      }
 
-  /* Tombol Checkout WA (Gradasi & Icon) */
-  .modal-footer .btn-success {
-    background: linear-gradient(135deg, #00c3ff, #ff00aa) !important;
-    border: none;
-    border-radius: 50px; /* Lebih membulat */
-    padding: 12px 30px;
-    font-weight: 700;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+      /* Tombol Checkout WA (Gradasi & Icon) */
+      .modal-footer .btn-success {
+        background: linear-gradient(135deg, #00c3ff, #ff00aa) !important;
+        border: none;
+        border-radius: 50px; /* Lebih membulat */
+        padding: 12px 30px;
+        font-weight: 700;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
 
-  .modal-footer .btn-success:hover {
-    box-shadow: 0 8px 25px rgba(255, 0, 170, 0.4);
-    transform: scale(1.03);
-  }
+      .modal-footer .btn-success:hover {
+        box-shadow: 0 8px 25px rgba(255, 0, 170, 0.4);
+        transform: scale(1.03);
+      }
 
+      /* ========================================================================== */
 
-  /* Tombol Keranjang Navbar */
-  .btn-light.position-relative {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-    border-radius: 12px;
-  }
+      /* Tombol Keranjang Navbar */
+      .btn-light.position-relative {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: none;
+        border-radius: 12px;
+      }
 
-  #cart-count {
-    background: #ff00aa !important;
-    border: 2px solid #1e293b;
-  }
-</style>
+      #cart-count {
+        background: #ff00aa !important;
+        border: 2px solid #1e293b;
+      }
+    </style>
   </head>
 
   <script>
@@ -325,7 +330,7 @@
             <div class="card-body">
               <h6 class="card-title text-truncate py-1">Daging Ayam</h6>
               <p class="card-text fw-bold text-danger fs-5">Rp 45.000 / Kg</p>
-              <span class="badge bg-secondary">Daging</span>
+              <span class="badge bg-secondary">Daging Ayam</span>
 
               <button class="btn btn-primary w-100 mt-2" onclick="tambahKeranjang('Daging Ayam', 45000)"><i class="bi bi-cart-plus"></i> Tambah ke Keranjang</button>
             </div>
@@ -338,7 +343,7 @@
             <div class="card-body">
               <h6 class="card-title text-truncate py-1">Daging Sapi</h6>
               <p class="card-text fw-bold text-danger fs-5">Rp 125.000 / Kg</p>
-              <span class="badge bg-secondary">Daging</span>
+              <span class="badge bg-secondary">Daging Sapi</span>
               <button class="btn btn-primary w-100 mt-2" onclick="tambahKeranjang('Daging Sapi', 125000)"><i class="bi bi-cart-plus"></i> Tambah ke Keranjang</button>
             </div>
           </div>
@@ -350,7 +355,7 @@
             <div class="card-body">
               <h6 class="card-title text-truncate py-1">Daging Kambing</h6>
               <p class="card-text fw-bold text-danger fs-5">Rp 140.000 /Kg</p>
-              <span class="badge bg-secondary">Daging</span>
+              <span class="badge bg-secondary">Daging Kambing</span>
               <button class="btn btn-primary w-100 mt-2" onclick="tambahKeranjang('Daging Kambing', 140000)"><i class="bi bi-cart-plus"></i> Tambah ke Keranjang</button>
             </div>
           </div>
@@ -362,7 +367,7 @@
             <div class="card-body">
               <h6 class="card-title text-truncate py-1">Daging Kuda</h6>
               <p class="card-text fw-bold text-danger fs-5">Rp 180.000 / Kg</p>
-              <span class="badge bg-secondary">Daging</span>
+              <span class="badge bg-secondary">Daging Kuda</span>
               <button class="btn btn-primary w-100 mt-2" onclick="tambahKeranjang('Daging Kuda', 180000)"><i class="bi bi-cart-plus"></i> Tambah ke Keranjang</button>
             </div>
           </div>
@@ -374,7 +379,7 @@
             <div class="card-body">
               <h6 class="card-title text-truncate py-1">Daging slice</h6>
               <p class="card-text fw-bold text-danger fs-5">Rp 45.000 / 250Gram</p>
-              <span class="badge bg-secondary">Daging</span>
+              <span class="badge bg-secondary">Daging slice</span>
 
               <button class="btn btn-primary w-100 mt-2" onclick="tambahKeranjang('Daging Slice', 45000)"><i class="bi bi-cart-plus"></i> Tambah ke Keranjang</button>
             </div>
@@ -400,9 +405,33 @@
             <div class="card-body">
               <h6 class="card-title text-truncate py-1">Susu Kambing</h6>
               <p class="card-text fw-bold text-danger fs-5">Rp 15.000 / 250Ml</p>
-              <span class="badge bg-secondary">Susu</span>
+              <span class="badge bg-secondary">Susu Kambing</span>
 
               <button class="btn btn-primary w-100 mt-2" onclick="tambahKeranjang('Susu Kambing', 15000)"><i class="bi bi-cart-plus"></i> Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4 effect-totop">
+          <div class="card h-100 shadow-sm">
+            <img src="img/img8susuSapi.jpg" alt="" class="card-img-top" />
+            <div class="card-body">
+              <h6 class="card-title text-truncate py-1">Susu Sapi</h6>
+              <p class="card-text fw-bold text-danger fs-5">Rp 25.000 / Liter</p>
+              <span class="badge bg-secondary">Susu Sapi</span>
+              <button class="btn btn-primary w-100 mt-2" onclick="tambahKeranjang('Susu Sapi', 25000)"><i class="bi bi-cart-plus"></i> Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4 effect-totop">
+          <div class="card h-100 shadow-sm">
+            <img src="img/img9dangke.jpg" alt="" class="card-img-top" />
+            <div class="card-body">
+              <h6 class="card-title text-truncate py-1">Dangke</h6>
+              <p class="card-text fw-bold text-danger fs-5">Rp 50.000</p>
+              <span class="badge bg-secondary">Dangke ( Keju Lokal )</span>
+              <button class="btn btn-primary w-100 mt-2" onclick="tambahKeranjang('Dangke ( Keju Lokal )', 50000)"><i class="bi bi-cart-plus"></i> Tambah ke Keranjang</button>
             </div>
           </div>
         </div>
